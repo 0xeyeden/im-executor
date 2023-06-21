@@ -94,10 +94,3 @@ jobs:
         # This step uses the identity token to provision an ephemeral certificate
         # against the sigstore community Fulcio instance.
         run: echo "${{ steps.meta.outputs.tags }}" | xargs -I {} cosign sign {}@${{ steps.build-and-push.outputs.digest }}
-
-      - name: deploy
-        if: contains(github.ref, 'dev')
-        id: deployton1
-        uses: CircleCI-Public/trigger-circleci-pipeline-action@v1.0.5
-        env:
-          CCI_TOKEN: ${{ secrets.CCI_TOKEN }}
