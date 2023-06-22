@@ -1,12 +1,6 @@
 on:
   release:
-    types: [published]
-  push:
-    branches: [ "main" ]
-    # Publish semver tags as releases.
-    tags: [ 'v*.*.*' ]
-  pull_request:
-    branches: [ "main" ]
+    types: [created]
 
 
 jobs:
