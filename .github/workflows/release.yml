@@ -33,8 +33,7 @@ jobs:
         goos: ${{ matrix.goos }}
         goarch: ${{ matrix.goarch }}
         goversion: "https://go.dev/dl/go1.18.10.linux-amd64.tar.gz"
-        project_path: "./"
+        project_path: "./cmd/main"
         pre_command: "go mod tidy"
-        build_flags: "./cmd/main"
         binary_name: "executor"
         extra_files: LICENSE README.md
